@@ -8,7 +8,7 @@
   import { Annotation, Plus } from "@steeze-ui/heroicons";
 </script>
 
-<main class="mt-2 h-screen text-center" data-theme="aqua">
+<main class="mt-2 h-screen text-center" data-theme="tj">
   <div class="flex justify-center">
     <img class="h-16 w-16" src={logo} alt="Svelte Logo" />
   </div>
@@ -21,8 +21,8 @@
       <!--	  <Icon src={SwitchHorizontal} theme='solid' class='ml-3 mr-1 mt-[0.125rem] h-5 w-5'/>-->
     </Button>
 
-    <Button class="btn btn-secondary rounded-full">
-      <Icon src={Plus} theme="solid" class="h-6 w-6" />
+    <Button class="btn btn-info rounded-full">
+      <Icon src={Plus} theme="solid" class="h-5 w-5" />
     </Button>
   </div>
 
