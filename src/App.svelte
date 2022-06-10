@@ -7,7 +7,7 @@
   import { Icon } from "@steeze-ui/svelte-icon";
   import { Annotation, Plus } from "@steeze-ui/heroicons";
 
-  let modalOpened = false;
+  let showModal = false;
 
 </script>
 
@@ -34,7 +34,7 @@
     <Icon src={Annotation} theme="default" class="text-red-500" width={48} />
   </div>
 
-	<Button class="btn btn-accent btn-modal" on:click={()=> {modalOpened = !modalOpened}}>
+	<Button class="btn btn-primary"  on:click={()=> {showModal = !showModal}}>
 		Open Modal
 	</Button>
 
@@ -45,19 +45,16 @@
   <!--		<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
   <!--	</div>-->
 
-	<!--	flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0-->
-	<!--	fixed top-[50vh] left-[50vw] width-6/12 shadow-xl z-50 overflow-auto bg-white rounded-->
-	{#if (modalOpened)}
-		<Modal id="modal" on:cancel={()=>{modalOpened = !modalOpened}}
-		       modalClass="fixed top-[50vh] left-[50vw] width-6/12 shadow-xl z-50 overflow-auto bg-white rounded"
-		       backdropClass="fixed top-0 left-0 h-screen w-screen z-[10] bg-gray-200 opacity-75"
+		<Modal {showModal}
+				on:cancel={()=>{showModal = !showModal}}
+				modalClass="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-xl z-50 overflow-auto bg-white rounded-lg"
+				backdropClass="fixed top-0 left-0 h-screen w-screen z-[10] bg-gray-200 opacity-75"
 		>
-			<div slot="header" class="p-1">Header</div>
-			<div class="p-1 mt-3">This is a Dialog</div>
-			<div slot="footer" class="p-1"><Button on:click={()=>{modalOpened = !modalOpened}}>Close</Button>
+			<div class="flex flex-col">
+				<div class="p-1 flex justify-center">Header</div>
+				<div class="p-1">This is a Dialog</div>
 			</div>
 		</Modal>
-	{/if}
 </main>
 
 <style>
