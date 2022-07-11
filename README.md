@@ -1,8 +1,8 @@
 # Svelte + Vite + daisyUI
 
 ```bash
-yarn
+pnpm i
 
-yarn dev --open
+pnpm dev --open
 
 ```
